@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+
+}
+
+/* grid column start - 1 , grid column end - 3 means ki 1 to 3 row
+ and 1 to 3 column mein yeh property legegi
+ 
+ shortcut- - grid column starrt- 1 / 3  measn starrt at 1 and end at 3*/
+
+#main{
+    width: 100%;
+    height: 100%;
+    background-color: white ;
+    display: grid;
+    grid-template-columns: 25% 25% 50%;
+    grid-template-rows: 26% 56% 18%;
+}
+
+
+#leftmeincentermein{
+
+    background-color:white;
+    grid-column-start:1 ;
+    grid-column-end: 3 ;
+    grid-row-start: 2 ;
+    padding: 0.9vw; /*diya taaki (padding is given in parent only)
+                     and ye upar and side se thodi jagah provide 
+                    krdeta dur hone ki*/
+                    
+    padding-left: 2vw;/*use to take text little right  (ad soace in left)/*
+
+ /*HAD TO DECRESE PADDINGA S TEXT LEFT NHI HORA THA SEE NTH CHILD 2N KA TEXT ALIGN COMMENT*/
+}
+#leftmeincentermein h1{
+     font-size: 5.7vw;
+    text-transform: uppercase;
+    line-height: 5.5vw; /*use this to control height of text like ye batat space btw two words horixontollly*/
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+/*use text transform for capitalizing text*/
+
+#leftmeincentermein h1:nth-child(2n+1){ /*  ##use when h1 is with every line and no br is there
+                                     not when only 1 h1 and other sparted by br tag##
+                                      abh maine dekha ki even wale text like
+                                      joh 2nd and 4th pe ara toh 
+                                       h1:nth-child(2n) se even wale pe only hongi chnages
+                                       h1:nth-child(3n) 3 ke multiples pe hogi chnages */ 
+                                       
+
+    text-align: left; 
+    /*When you apply text-align: left to an element, it aligns the text inside that element's own bounding box. 
+    By default, your text is likely sitting tight against the edges of its block container. 
+    If the outer container (#leftmeincentermein) is centered, or if the h1 blocks themselves don't span the full width*/
+              
+
+
+}
+
+#leftmeincentermein h1:nth-child(2n){ 
+
+    text-align: center;
+}
+
+
+
+#leftmeinbottom{
+    background-color: white;
+     grid-column-start: 1 ;
+     grid-column-end: 3;
+    grid-row-start:3;
+    padding: 1.8vw; /**/
+}
+#leftmeinbottom p{
+    font-family: 'Gilroy';
+     font-size: 0.8vw;
+        width:70%; /*When you set a width to 70%, the browser automatically pushes the paragraph to the left side, 
+           leaving a blank 30% gap on the right. To fix this and make it look balanced, center the entire text block:*/
+}
+#rightmein{
+    background-color: purple;
+    grid-column-start: 3;
+    grid-row-start:1 ;
+    grid-row-end: 4; 
+    padding: 40px;
+    padding-right: 150px;
+}
+#leftmeinlefttop{
+    
+    background-color: white;
+    padding:1.8vw;
+
+}
+#diamond{
+    width: 0.8vw;
+    height: 0.8vw;
+    background-color: black;
+    rotate: 45deg; /* ye shape ko 45 clock-wise rotate karega */
+    /*margin-left: 10px; /* Change 10px to a larger or smaller value */
+    
+    
+}
+#leftmeinrighttop{
+   
+    grid-column-start: 2  ;
+    grid-row-start: 1 ;
+     padding: 1.5vw; /*ye vw rkha kro taaki diff screens pe bji sma edikhe*/
+    text-align: right;
+    
+}
+#leftmeinrighttop h1{
+     margin-bottom: 1.5vw;
+    font-size: 1vw;
+    font-weight: 500;
+ font-family: 'Gilroy';
+      
+
+/* always use vw in css for text and also for all*/
+
+
+    /* BAI br used to add space but anoter method jiss heading ke under chhciye space
+    usse css mein write text align bottom*/
+}
+#leftmeinrighttop h2{
+    font-size: 1vw;
+    font-weight: 500;
+    font-family: 'Gilroy';/
+}
+
+#rightmein{
+    background-color:white;
+    grid-column-start: 3;
+    grid-row-start:1 ;
+    grid-row-end: 4; 
+   
+    
+}
+#rightmein video{
+    
+    height:40.5vw;
+    width:40vw;
+   
+    object-fit: cover; /*The CSS object-fit: cover; property specifies how an embeddable media element, 
+    such as an <img> or <video>,should scale to completely fill its container.
+It maintains the original aspect ratio of the image or video 
+while expanding it. If the aspect ratio of the media does not perfectly match the container, 
+the media is proportional cropped to fit.*/
+ 
+    
+}
+
+#arrow{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: orangered;
+    padding: 1.5vw;
+    color: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+#arrow i {
+    font-size: 2vw;
+    font-weight: 100;
+}
